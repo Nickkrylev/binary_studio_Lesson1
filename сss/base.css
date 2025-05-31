@@ -1,0 +1,16 @@
+:root{
+  --bg:            #151339;
+  --main-orange:   #E25300;
+  --main-orange-2: #F19741;
+  --white:         #fff;
+  --radius:        28px;
+  --trans:         280ms cubic-bezier(.4,0,.2,1);
+  font-family:"Righteous", cursive;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:var(--bg);color:var(--white);
+  min-height:200vh;               /* щоб можна було проскролити */
+}
+main{padding-top:140px;max-width:52ch;margin:auto;line-height:1.6}
