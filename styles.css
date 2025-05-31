@@ -1,3 +1,11 @@
 /* Подтягиваем слои в нужном порядке */
 @import url('./сss/base.css');
 @import url('./сss/header.css');
+
+@import url('./сss/info.css');
+@import url('./сss/hero.css');
+@import url('./сss/opportunities.css');
+@import url('./сss/gallery.css');
+@import url('./сss/subscribe.css');
+@import url('./сss/responsive.css');
+@import url('./сss/footer.css');

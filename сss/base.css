@@ -1,16 +1,149 @@
-:root{
-  --bg:            #151339;
-  --main-orange:   #E25300;
-  --main-orange-2: #F19741;
-  --white:         #fff;
-  --radius:        28px;
-  --trans:         280ms cubic-bezier(.4,0,.2,1);
-  font-family:"Righteous", cursive;
+
+:root {
+    --bg:                #151339;               /* Фон страницы */
+  --main-purple:       #5E46B9;               /* «Main purple» */
+  --main-orange:       #E25300;               /* Primary orange */
+  --main-orange-light: #F19741;               /* Light orange */
+  --white:             #FFFFFF;
+
+  --purple-gradient:  linear-gradient(
+                         135deg,
+                         rgb(133 100 187) 0%,
+                         rgb(102 44 197) 85%
+                       );
+  --orange-gradient:  radial-gradient(
+                         circle at 30% 30%,
+                         rgb(245 194 146) 25%,
+                         rgb(241 150 65) 85%
+                       );
+
+  --radius-lg: 32px;
+  --radius-md: 28px;
+  --trans:     280ms cubic-bezier(.4,0,.2,1);
+  --ease:      cubic-bezier(.4,0,.2,1);
+
+  --fs-h1:    clamp(2.5rem, 5vw, 4.5rem);
+  --fs-h2:    clamp(2rem,   4vw, 3.5rem);
+  --fs-h3:    clamp(1.75rem,3.5vw,3rem);
+  --fs-sub:   clamp(1.3rem, 2.8vw, 2.2rem);
+  --fs-title: 1.1rem;
+  --fs-body:  1rem;
+  --fs-btn:   1rem;
+  --fs-btn-sm:.875rem;
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  background:var(--bg);color:var(--white);
-  min-height:200vh;               /* щоб можна було проскролити */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-main{padding-top:140px;max-width:52ch;margin:auto;line-height:1.6}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Righteous", cursive;
+  background: var(--bg);
+  color: var(--white);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1240px, 95%);
+  margin-inline: auto;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  font-weight: 700;
+}
+h2 {
+  font-size: var(--fs-h2);
+  font-weight: 700;
+}
+h3 {
+  font-size: var(--fs-h3);
+  font-weight: 700;
+}
+.subheader {
+  font-size: var(--fs-sub);
+  font-weight: 600;
+}
+.title {
+  font-size: var(--fs-title);
+  font-weight: 600;
+}
+
+
+.btn,
+.intro__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: var(--radius-md);
+  font-size: var(--fs-btn);
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    transform .25s var(--ease),
+    box-shadow .25s var(--ease),
+    background var(--trans),
+    color var(--trans),
+    border-color var(--trans);
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn-primary,
+.intro__button--primary {
+  background: linear-gradient(
+                90deg,
+                var(--main-orange),
+                var(--main-orange-light)
+              );
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+  border: none;
+}
+
+.btn-outline,
+.intro__button--outline {
+  background: transparent;
+  border: 2px solid var(--main-orange-light);
+  color: var(--main-orange-light);
+}
+
+.btn:hover,
+.intro__button:hover {
+  transform: translateY(-2px);
+}
+.btn:active,
+.intro__button:active {
+  transform: translateY(0);
+}
+.btn-primary:hover,
+.intro__button--primary:hover {
+  filter: brightness(1.05);
+}
+.btn-outline:hover,
+.intro__button--outline:hover {
+  background: var(--main-orange-light);
+  color: var(--white);
+}
